@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "github.com/Sh1wOo/client-server-solid-golang-grpc";
+option go_package = "github.com/Sh1wOo/client-server-solid-golang-grpc/library";
 
 package library;
 
@@ -18,9 +18,16 @@ message BookResponse {
   Book book = 1;
 }
 
+message AllBooksRequest {}
+
+message AllBooksResponse {
+  repeated Book book = 1;
+}
+
 service LibraryService {
   rpc CreateBook(BookRequest) returns (BookResponse) {}
   rpc GetBook(BookRequest) returns (BookResponse) {}
+  rpc GetAllBooks(AllBooksRequest) returns (AllBooksResponse) {}
   rpc UpdateBook(BookRequest) returns (BookResponse) {}
   rpc DeleteBook(BookRequest) returns (BookResponse) {}
 }
