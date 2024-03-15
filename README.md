@@ -14,7 +14,7 @@ go run .
 
 for run an client:
 
-insalling node_modules
+installing node_modules
 ```bash 
 npm i
 ```
