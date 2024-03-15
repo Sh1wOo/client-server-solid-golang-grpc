@@ -37,7 +37,6 @@ func NewDatabase(dsn string) (*Database, error) {
 func (d *Database) Close() {
 	sqlDB, err := d.db.DB()
 	if err != nil {
-		// Обработка ошибки
 		return
 	}
 	sqlDB.Close()
